@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="container">
+    <form class="form" id="form" action="" method="post">
+        <label class="form__label__title" for="form"><h1>Contato</h1></label>
+        <div class="wrapper">
+            <label class="form__label__name" for="name">Nome</label>
+            <input class="form__name" required oninvalid="requiredMsg(this,'Preencha o Nome corretamente')"
+                   oninput="resetRequired(this)"
+                   type="text" id="name" name="name">
+            <label class="form__label__email" for="email">E-mail</label>
+            <input class="form__email" required oninvalid="requiredMsg(this,'Preencha o E-mail corretamente')"
+                   oninput="resetRequired(this)"
+                   type="text" id="email" name="email">
+            <label class="form__label__text" for="text">Texto</label>
+            <textarea required oninvalid="requiredMsg(this,'Escreva um texto')" oninput="resetRequired(this)"
+                      name="text" id="text" cols="30" rows="10"></textarea>
+            <div class="form__control">
+                <button class="control__button--submit" type="submit">Submeter</button>
+                <button class="control__button--reset" type="reset">Limpar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function requiredMsg(element, message) {
+        validateEmail(element); // for field email
+        element.setCustomValidity(message);
+    }
+
+    function resetRequired(element) {
+        element.setCustomValidity('');
+    }
+
+    function validateEmail(element) {
+        if (element.name === 'email')
+            element.pattern = "[A-Za-z0-9\\._-]+@[0-9A-Za-z]+[\\.][A-Za-z][\\.A-Za-z]+";
+    }
+</script>
+</body>
+</html>
