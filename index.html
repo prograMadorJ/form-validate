@@ -12,14 +12,14 @@
         <div class="wrapper">
             <label class="form__label__name" for="name">Nome</label>
             <input class="form__name" required oninvalid="requiredMsg(this,'Preencha o Nome corretamente')"
-                   oninput="resetRequired(this)"
+                   oninput="resetRequiredMsg(this)"
                    type="text" id="name" name="name">
             <label class="form__label__email" for="email">E-mail</label>
             <input class="form__email" required oninvalid="requiredMsg(this,'Preencha o E-mail corretamente')"
-                   oninput="resetRequired(this)"
+                   oninput="resetRequiredMsg(this)"
                    type="text" id="email" name="email">
             <label class="form__label__text" for="text">Texto</label>
-            <textarea required oninvalid="requiredMsg(this,'Escreva um texto')" oninput="resetRequired(this)"
+            <textarea required oninvalid="requiredMsg(this,'Escreva um texto')" oninput="resetRequiredMsg(this)"
                       name="text" id="text" cols="30" rows="10"></textarea>
             <div class="form__control">
                 <button class="control__button--submit" type="submit">Submeter</button>
@@ -34,7 +34,7 @@
         element.setCustomValidity(message);
     }
 
-    function resetRequired(element) {
+    function resetRequiredMsg(element) {
         element.setCustomValidity('');
     }
 
